@@ -11,6 +11,10 @@ public class Empleado implements Comparable<Empleado>{
         this.position = position;
     }
 
+    public Empleado(int id2) {
+        //TODO Auto-generated constructor stub
+    }
+
     public int getId() {
         return id;
     }
@@ -38,10 +42,10 @@ public class Empleado implements Comparable<Empleado>{
     }
     @Override
     public int hashCode() {
-        int result = Integer.hashCode(id);
-        result = 31 * result + name.hashCode();
-        return result;
-    }
+    int result = Integer.hashCode(id);
+    result = 31 * result + (name != null ? name.hashCode() : 0);
+    return result;
+}
     //En caso de que el id sea el mismo, se compara por nombre
     // si el id es diferente se compara por id
     @Override
